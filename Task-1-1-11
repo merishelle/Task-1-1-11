@@ -1,0 +1,44 @@
+// Step 1: Create the base class Vehicle
+class Vehicle {
+    String make;
+    String model;
+    int year;
+
+    // Constructor for Vehicle class
+    public Vehicle(String make, String model, int year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+}
+
+// Step 2: Create the derived class Car
+class Car extends Vehicle {
+    int numberOfDoors;
+
+    // Constructor for Car class
+    public Car(String make, String model, int year, int numberOfDoors) {
+        // Call the constructor of the base class (Vehicle)
+        super(make, model, year);
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    // Step 4: Implement the displayDetails method
+    public void displayDetails() {
+        System.out.println("Car Details:");
+        System.out.println("Make: " + make);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Number of Doors: " + numberOfDoors);
+    }
+}
+
+// Step 3: Create an instance of the Car class and set values for its attributes
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car("Toyota", "Camry", 2022, 4);
+
+        // Step 4: Call the displayDetails method to print out the details of the car
+        myCar.displayDetails();
+    }
+}
